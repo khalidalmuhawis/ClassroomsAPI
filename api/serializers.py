@@ -21,7 +21,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class ClassroomSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Classroom
-		fields = ['subject', 'name', 'year', 'teacher','id']
+		fields = ['subject', 'name', 'year', 'teacher']
 
 
 class ClassroomDetailsSerializer(serializers.ModelSerializer):

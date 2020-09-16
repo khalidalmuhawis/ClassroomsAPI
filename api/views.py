@@ -34,7 +34,6 @@ class ClassroomUpdate(RetrieveUpdateAPIView):
 	serializer_class = ClassroomUpdateSerializer
 	lookup_field = 'id'
 	lookup_url_kwarg = 'classroom_id'
-	permission_classes = [IsAdminUser]
 
 
 class ClassroomCancel(DestroyAPIView):
