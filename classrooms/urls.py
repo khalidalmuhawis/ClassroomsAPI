@@ -19,9 +19,19 @@ urlpatterns = [
     path('classrooms/create', views.classroom_create, name='classroom-create'),
     path('classrooms/<int:classroom_id>/update/', views.classroom_update, name='classroom-update'),
     path('classrooms/<int:classroom_id>/delete/', views.classroom_delete, name='classroom-delete'),
+
+
     path('login/', TokenObtainPairView.as_view(), name="api-login"),
     path('token/refresh/', TokenRefreshView.as_view(), name="token-refresh"),
     path('register/', api_views.Register.as_view(), name="api-register"),
+
+    path('classroomsapi/', api_views.ClassroomList.as_view(), name="api-classroom-list"),
+    path('classroomsapi/<int:classroom_id>/', api_views.ClassroomDetail.as_view(), name="api-classroom-detail"),
+
+
+    path('classroomcreateapi/', api_views.ClassroomCreate.as_view(), name="api-classroom-create"),
+    path('classroomupdateapi/<int:classroom_id>/', api_views.ClassroomUpdate.as_view(), name="api-classroom-update"),
+    path('classroomcanceleapi/<int:classroom_id>/', api_views.ClassroomCancel.as_view(), name="api-classroom-delete"),
 ]
 
 if settings.DEBUG:
